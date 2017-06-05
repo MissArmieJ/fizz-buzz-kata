@@ -9,6 +9,7 @@ namespace FizzBuzzKata.Test
         [TestCase(1, "1")]
         [TestCase(2, "2")]
         [TestCase(3, "Fizz")]
+        [TestCase(5, "Buzz")]
         public void calculate_ouput_based_on_input_number(int number, string expectedOutput)
         {
             var fizzBuzz = new FizzBuzz();
@@ -26,6 +27,10 @@ namespace FizzBuzzKata.Test
             if (number == 3)
             {
                 return "Fizz";
+            }
+            if (number == 5)
+            {
+                return "Buzz";
             }
             return number.ToString();
         }
