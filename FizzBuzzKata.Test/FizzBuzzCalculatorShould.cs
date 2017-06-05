@@ -27,20 +27,30 @@ namespace FizzBuzzKata.Test
     {
         public string Calculate(int number)
         {
-            if ((number % 3 == 0) && (number % 5 == 0))
+            if (IsMultiplesOfThree(number) && IsMultiplesOfFive(number))
             {
                 return "FizzBuzz";
             }
-            if (number % 3 == 0)
+            if (IsMultiplesOfThree(number))
             {
                 return "Fizz";
             }
-            if (number % 5 == 0)
+            if (IsMultiplesOfFive(number))
             {
                 return "Buzz";
             }
             
             return number.ToString();
+        }
+
+        private static bool IsMultiplesOfFive(int number)
+        {
+            return number % 5 == 0;
+        }
+
+        private static bool IsMultiplesOfThree(int number)
+        {
+            return (number % 3 == 0);
         }
     }
 }
