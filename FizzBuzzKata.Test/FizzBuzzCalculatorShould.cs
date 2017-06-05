@@ -6,34 +6,16 @@ namespace FizzBuzzKata.Test
     [TestFixture]
     public class FizzBuzzCalculatorShould
     {
-        [Test]
-        public void calculate_1_if_input_is_1()
+        [TestCase(1, "1")]
+        [TestCase(2, "2")]
+        [TestCase(3, "Fizz")]
+        public void calculate_ouput_based_on_input_number(int number, string expectedOutput)
         {
-            FizzBuzz fizzBuzz = new FizzBuzz();
+            var fizzBuzz = new FizzBuzz();
 
-            var output = fizzBuzz.Calculate(1);
+            var output = fizzBuzz.Calculate(number);
 
-            Assert.That(output, Is.EqualTo("1"));
-        }
-
-        [Test]
-        public void calculate_2_if_input_is_2()
-        {
-            FizzBuzz fizzBuzz = new FizzBuzz();
-
-            var output = fizzBuzz.Calculate(2);
-
-            Assert.That(output, Is.EqualTo("2"));
-        }
-
-        [Test]
-        public void calculate_Fizz_if_input_is_3()
-        {
-            FizzBuzz fizzBuzz = new FizzBuzz();
-
-            var output = fizzBuzz.Calculate(3);
-
-            Assert.That(output, Is.EqualTo("Fizz"));
+            Assert.That(output, Is.EqualTo(expectedOutput));
         }
     }
 
