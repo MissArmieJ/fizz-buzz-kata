@@ -15,13 +15,23 @@ namespace FizzBuzzKata.Test
 
             Assert.That(output, Is.EqualTo("1"));
         }
+
+        [Test]
+        public void calculate_2_if_input_is_2()
+        {
+            FizzBuzz fizzBuzz = new FizzBuzz();
+
+            var output = fizzBuzz.Calculate(2);
+
+            Assert.That(output, Is.EqualTo("2"));
+        }
     }
 
     public class FizzBuzz
     {
         public string Calculate(int number)
         {
-            return "1";
+            return number.ToString();
         }
     }
 }
