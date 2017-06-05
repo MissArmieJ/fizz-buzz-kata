@@ -21,7 +21,7 @@ namespace FizzBuzzKata.Test
     {
         public string Calculate(int number)
         {
-            throw new NotImplementedException();
+            return "1";
         }
     }
 }
