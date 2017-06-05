@@ -25,12 +25,26 @@ namespace FizzBuzzKata.Test
 
             Assert.That(output, Is.EqualTo("2"));
         }
+
+        [Test]
+        public void calculate_Fizz_if_input_is_3()
+        {
+            FizzBuzz fizzBuzz = new FizzBuzz();
+
+            var output = fizzBuzz.Calculate(3);
+
+            Assert.That(output, Is.EqualTo("Fizz"));
+        }
     }
 
     public class FizzBuzz
     {
         public string Calculate(int number)
         {
+            if (number == 3)
+            {
+                return "Fizz";
+            }
             return number.ToString();
         }
     }
